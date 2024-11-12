@@ -26,6 +26,7 @@ export async function POST(req: Request) {
             .describe("the content or memory to add to the knowledge base"),
         }),
         execute: async ({ content }) => {
+          // Mem0 expects an array of messages that are structured as follows according to the LanguageModelV1Prompt type
           const messages = [
             {
               role: "user" as const,
